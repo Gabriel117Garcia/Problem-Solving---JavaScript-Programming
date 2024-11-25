@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Práctica JavaScript - Gabriel García</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <h2> Mostrar ventana alert</h2>
+    <script> lenguage = "JavaScript"
+        let num;
+        num=prompt("Favor de ingresar un número","1");
+        alert("Factorial de "+num+" es "+factorial(num));
+        function factorial(n){
+            if(n==0){
+                return 1;
+            }else{
+                return n*factorial(n-1);
+            }
+        }
+    </script>
+</body>
+</html>
