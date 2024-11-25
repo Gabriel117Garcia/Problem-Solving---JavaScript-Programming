@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predicciones de futuro - Gabriel García</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f8ff;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #5a20cb;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+
+    button {
+      background-color: #5a20cb;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #451a9b;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    img {
+      margin-top: 20px;
+      width: 200px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Predicciones del Futuro</h1>
+<p>¡Bienvenido! Haz clic en uno de los temas para recibir una predicción de tu futuro.</p>
+<p>Selecciona entre Finanzas, Amor o Trabajo. ¿Qué te depara el destino?</p>
+
+<table>
+  <tr>
+    <td><button onclick="generatePrediction('finanzas')">Finanzas</button></td>
+    <td><button onclick="generatePrediction('amor')">Amor</button></td>
+    <td><button onclick="generatePrediction('trabajo')">Trabajo</button></td>
+  </tr>
+</table>
+
+<input type="text" id="predictionBox" placeholder="Tu predicción aparecerá aquí..." readonly>
+
+<img src="https://via.placeholder.com/200" alt="Predicción del Futuro">
+
+<script>
+  function generatePrediction(category) {
+    const predictions = {
+      finanzas: [
+        "¡Ganarás la lotería pronto!",
+        "Una inversión inesperada te dará grandes frutos.",
+        "Cuidado con los gastos excesivos esta semana.",
+        "Un ingreso extra te alegrará el día.",
+        "Es un buen momento para ahorrar más."
+      ],
+      amor: [
+        "Pronto encontrarás a alguien especial.",
+        "El amor está a la vuelta de la esquina.",
+        "Dedica tiempo a las personas que amas.",
+        "Una sorpresa romántica está en camino.",
+        "Un viejo amigo se convertirá en algo más."
+      ],
+      trabajo: [
+        "Una promoción está en tu futuro cercano.",
+        "Prepárate para un desafío laboral importante.",
+        "Tu esfuerzo será reconocido esta semana.",
+        "Es un buen momento para buscar nuevas oportunidades.",
+        "Un proyecto exitoso marcará tu carrera."
+      ]
+    };
+
+    // Generar un número aleatorio entre 0 y 4
+    const randomIndex = Math.floor(Math.random() * 5);
+
+    // Mostrar la predicción en la caja de texto
+    const predictionBox = document.getElementById("predictionBox");
+    predictionBox.value = predictions[category][randomIndex];
+  }
+</script>
+</body>
+
+</html>

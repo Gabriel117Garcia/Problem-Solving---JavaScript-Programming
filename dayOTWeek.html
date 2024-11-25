@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día de la semana - Gabriel García</title>
+</head>
+
+<body>
+<p>Ingresa un día de la semana:</p>
+<form name="Sample">
+    <input type="text" name="day" id="day" placeholder="Escribe aquí..." oninput="updateBackground(this.value)">
+</form>
+
+<script type="text/javascript">
+    function updateBackground(day) {
+        day = day.trim().toLowerCase(); // Quitar espacios y convertir a minúsculas
+        let color = "#ffffff"; // Color por defecto (blanco)
+
+        // Asignar colores según el día de la semana
+        switch (day) {
+            case "lunes":
+                color = "#ffcccc"; // Rojo claro
+                break;
+            case "martes":
+                color = "#ccffcc"; // Verde claro
+                break;
+            case "miércoles":
+            case "miercoles": // Aceptar acentos y sin acentos
+                color = "#ccccff"; // Azul claro
+                break;
+            case "jueves":
+                color = "#ffffcc"; // Amarillo claro
+                break;
+            case "viernes":
+                color = "#ffcce7"; // Rosa claro
+                break;
+            case "sábado":
+            case "sabado":
+                color = "#e0ccff"; // Púrpura claro
+                break;
+            case "domingo":
+                color = "#ccffff"; // Cian claro
+                break;
+            default:
+                color = "#f4f4f4"; // Gris claro para valores no válidos
+        }
+
+        // Cambiar el color de fondo
+        document.body.style.backgroundColor = color;
+    }
+</script>
+</body>
+
+</html>

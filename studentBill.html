@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Matrícula - Gabriel García</title>
+</head>
+
+<body>
+<script type="text/javascript">
+    // Definición de constantes y variables
+    const costoCredito = 360; // Precio por crédito
+    let nombre;
+    let añoAcademico;
+    let creditos;
+    let cuota = 0;
+    let totalCreditos;
+
+    // Solicitar nombre del estudiante
+    do {
+        nombre = prompt("Ingresa tu nombre:");
+    } while (!nombre);
+
+    // Solicitar y validar el año académico
+    let esValido = false;
+    do {
+        añoAcademico = parseInt(prompt("Ingresa tu año académico:\n1) Freshman\n2) Sophomore\n3) Junior\n4) Senior:"));
+        switch (añoAcademico) {
+            case 1: // Freshman
+                cuota = 50;
+                esValido = true;
+                break;
+            case 2: // Sophomore
+                cuota = 75;
+                esValido = true;
+                break;
+            case 3: // Junior
+            case 4: // Senior
+                cuota = 100;
+                esValido = true;
+                break;
+            default:
+                alert("Por favor, selecciona una opción válida (1-4).");
+                break;
+        }
+    } while (!esValido);
+
+    // Solicitar y validar el número de créditos
+    do {
+        creditos = parseInt(prompt("Ingresa tu número de créditos:"));
+        if (isNaN(creditos) || creditos <= 0) {
+            alert("Por favor, ingresa un número válido de créditos.");
+        }
+    } while (isNaN(creditos) || creditos <= 0);
+
+    // Calcular el costo total de los créditos
+    if (creditos > 12) {
+        totalCreditos = 4320; // Máximo costo de créditos
+    } else {
+        totalCreditos = creditos * costoCredito;
+    }
+
+    // Calcular la matrícula total
+    let totalMatricula = totalCreditos + cuota;
+
+    // Mostrar el resultado en un mensaje
+    alert(
+        nombre +
+        "\nTu matrícula total es:\n" +
+        "Costo de créditos: $" + totalCreditos.toFixed(2) +
+        "\nCuota por año académico: $" + cuota +
+        "\nTotal: $" + totalMatricula.toFixed(2)
+    );
+</script>
+</body>
+
+</html>
